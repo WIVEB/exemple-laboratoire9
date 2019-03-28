@@ -11,9 +11,6 @@
 </html>
 <script>
     let socket = io.connect('http://localhost:8080');
-    socket.on('connect', function(data) {
-        socket.emit('new_user', 'bob');
-    });
     socket.on('message', function (msg) {
         console.log(msg)
     });

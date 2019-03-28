@@ -24,9 +24,6 @@ io.on('connection', function(client) {
     client.username = id;
     console.log('Client'+id+ 'connected...');
     client.broadcast.emit('message','User bob'+ id+ ' connected');
-    client.on('new_user', function(data) {
-        client.emit('message', "Je suis "+ data+ client.username);
-    });
 
     client.on('message', function(data) {
         client.broadcast.emit('message',data);
